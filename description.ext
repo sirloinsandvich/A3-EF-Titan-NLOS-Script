@@ -1,0 +1,23 @@
+class CfgCommunicationMenu
+{
+	class myTitanSupport
+	/*
+	To add this support to a player unit, paste the following code into the unit's init field
+	
+		_titanSup = [this, "myTitanSupport"] call BIS_fnc_addCommMenuItem;
+		
+	Create a unit with a Titan NLOS (e.g. a Combat Boat(AT)) and give it the variable name "titanVic".
+		In my experience, it's best to tell this unit to Hold Fire, because otherwise, they might shoot at the laser target on their own.
+	
+	The player unit must have Data Link Send enabled, and the supporting unit must have both Data Link Send and Receive. The player should be equipped with a laser designator. 
+	*/
+	{
+		text = "Launch Titan NLOS";		// Text displayed in the menu and in a notification
+		submenu = "";					// Submenu opened upon activation (expression is ignored when submenu is not empty.)
+		expression = "titanVic execVM 'scripts\titanLaunch.sqf'";	// Code executed upon activation
+		icon = "\a3\Ui_f\data\GUI\Cfg\CommunicationMenu\cas_ca.paa";				// Icon displayed permanently next to the command menu
+		cursor = "\a3\Ui_f\data\IGUI\Cfg\Cursors\iconCursorSupport_ca.paa";				// Custom cursor displayed when the item is selected
+		enable = "1";					// Simple expression condition for enabling the item
+		removeAfterExpressionCall = 0;	// 1 to remove the item after calling
+	};     
+};
