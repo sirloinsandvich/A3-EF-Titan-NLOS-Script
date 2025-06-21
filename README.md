@@ -4,7 +4,9 @@ A simple script for Titan NLOS support using Arma 3's Expeditionary Forces CDLC.
 This set of scripts is designed to create a custom fire support for units using the EF Titan NLOS system. Here's a quick breakdown of the scripts.
 
   description.ext - Contains the definitions for the new custom support class. Required to add the support to a players communications menu.
+  
   scripts\titanLaunch.sqf - actually executes the launching of the missile, referenced in description.ext
+
   scripts\titanCamera.sqf - displays the camera that tracks the missile in flight
 
 General usage is as follows:
