@@ -14,8 +14,8 @@ class CfgCommunicationMenu
 	{
 		text = "Launch Titan NLOS";		// Text displayed in the menu and in a notification
 		submenu = "";					// Submenu opened upon activation (expression is ignored when submenu is not empty.)
-		expression = "titanVic execVM 'scripts\titanLaunch.sqf'";	// Code executed upon activation
-		icon = "\a3\Ui_f\data\GUI\Cfg\CommunicationMenu\cas_ca.paa";				// Icon displayed permanently next to the command menu
+		expression = "playSound 'TacticalPing4'; (_this select 0) sideChat 'Target lased, requesting fire. Over.'; titanVic execVM 'scripts\titanLaunch.sqf';";	// Code executed upon activation
+		icon = "\ef\ef_ui\data\communications\missile_ca.paa";				// Icon displayed permanently next to the command menu
 		cursor = "\a3\Ui_f\data\IGUI\Cfg\Cursors\iconCursorSupport_ca.paa";				// Custom cursor displayed when the item is selected
 		enable = "1";					// Simple expression condition for enabling the item
 		removeAfterExpressionCall = 0;	// 1 to remove the item after calling
