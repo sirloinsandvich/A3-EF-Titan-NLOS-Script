@@ -14,13 +14,14 @@ Example:
 */
 
 private _launchVic = _this;	   //passes the vehicle to a private variable
+sleep 4;
 private _laserTgt = laserTarget focusOn;    //sets the laser to be targeted
 private _status = weaponState [_launchVic, [0], "EF_Weapon_Titan_NLOS"];    //gets the status of the vehicle's titan launcher
 if ((_status select 4) > 0 && (_status select 5) == 0 && (_status select 6) == 0) then {    //this section checks to see if the launcher can fire, and then commands it to fire. If the unit can't fire (reloading, out of ammo, etc.) it will say so.
 	_launchVic commandTarget _laserTgt;    //aim at the laser target
 	_handle = _launchVic fireAtTarget [_laserTgt, "EF_Weapon_Titan_NLOS"];    //fire ze missiles!
-	_launchVic sideChat "Missile Away!";    //tell the player what you've done
+	_launchVic sideChat "Laser locked, missile inbound.";    //tell the player what you've done
 }
 else {
-	_launchVic sideChat "Cannot Fire!";    //tell the player no
+	_launchVic sideChat "Cannot fire!";    //tell the player no
 }
